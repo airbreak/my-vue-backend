@@ -60,6 +60,28 @@ export const constantRouterMap = [
   },
 
   {
+    path: '/mhz',
+    component: Layout,
+    redirect: '/mhz/list',
+    name: 'Mhz',
+    meta: { title: 'Mhz', icon: 'music' },
+    children: [
+      {
+        path: 'list',
+        name: 'list',
+        component: () => import('@/views/myMhz/index'),
+        meta: { title: 'List', icon: 'music-list' }
+      },
+      {
+        path: 'detail',
+        name: 'detail',
+        component: () => import('@/views/myMhz/detail'),
+        meta: { title: 'Detail', icon: 'music-detail' }
+      }
+    ]
+  },
+
+  {
     path: '/form',
     component: Layout,
     children: [
